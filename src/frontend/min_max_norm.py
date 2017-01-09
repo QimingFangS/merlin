@@ -97,10 +97,13 @@ class MinMaxNormalisation(object):
         for i in xrange(file_number):
             features = io_funcs.load_binary_file(in_file_list[i], self.feature_dimension)
 
-            print(features.shape)
-
-            temp_min = numpy.amin(features, axis = 0)
-            temp_max = numpy.amax(features, axis = 0)
+            try:
+                temp_min = numpy.amin(features, axis = 0)
+                temp_max = numpy.amax(features, axis = 0)
+            except ValueError:
+                print(in_file_list[i])
+                print(features.shape)
+                raise
 
             min_value_matrix[i, ] = temp_min;
             max_value_matrix[i, ] = temp_max;
