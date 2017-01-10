@@ -103,7 +103,7 @@ class MinMaxNormalisation(object):
                 max_value_matrix[i, ] = temp_max;
             except ValueError:
                 print("Normalization error in %s, shape of %s" % (in_file_list[i], str(features.shape)))
-                raise
+                print("Continuing")
 
         self.min_vector = numpy.amin(min_value_matrix, axis = 0)
         self.max_vector = numpy.amax(max_value_matrix, axis = 0)
