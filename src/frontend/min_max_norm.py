@@ -102,12 +102,14 @@ class MinMaxNormalisation(object):
                 min_value_matrix[i, ] = temp_min;
                 max_value_matrix[i, ] = temp_max;
             except ValueError:
-                # could solve this directly since I have feature dim...
-                min_value_matrix[i, ] = min_value_matrix[i - 1]
-                max_value_matrix[i, ] = max_value_matrix[i - 1]
+                print("Normalization error in %s, shape of %s" % (in_file_list[i], str(features.shape)))
+                raise
 
         self.min_vector = numpy.amin(min_value_matrix, axis = 0)
         self.max_vector = numpy.amax(max_value_matrix, axis = 0)
+        idx = (self.max_vector - self.min_vector) < 1E-9
+        self.min_vector[idx] = 0.
+        self.max_vector[idx] = 1.
         self.min_vector = numpy.reshape(self.min_vector, (1, self.feature_dimension))
         self.max_vector = numpy.reshape(self.max_vector, (1, self.feature_dimension))
 
