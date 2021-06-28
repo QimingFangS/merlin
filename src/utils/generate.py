@@ -43,7 +43,8 @@
 This script assumes c-version STRAIGHT which is not available to public. Please use your 
 own vocoder to replace this script. 
 '''
-import sys, os, subprocess, glob, commands
+import sys, os, subprocess, glob
+import subprocess as commands
 #from utils import GlobalCfg
 
 from io_funcs.binary_io import  BinaryIOCollection
