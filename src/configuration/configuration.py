@@ -44,6 +44,7 @@ import os
 import logging
 from io import StringIO
 import io
+import six
 import sys
 import textwrap
 import datetime
@@ -867,7 +868,7 @@ class configuration(object):
 
             try:
                 # pass that string as a filehandle
-                fh = io.BytesIO(config_string.encode())
+                fh = six.StringIO(config_string)
                 logging.config.fileConfig(fh)
                 fh.close()
                 logger.info("logging is now fully configured")
