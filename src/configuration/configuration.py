@@ -43,6 +43,7 @@ import configparser as ConfigParser
 import os
 import logging
 from io import StringIO
+import io
 import sys
 import textwrap
 import datetime
