@@ -42,7 +42,7 @@ import math
 import configparser
 import os
 import logging
-import StringIO
+from io import StringIO
 import sys
 import textwrap
 import datetime
