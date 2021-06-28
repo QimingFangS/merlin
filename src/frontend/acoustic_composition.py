@@ -40,7 +40,7 @@
 from io_funcs.binary_io import BinaryIOCollection
 import numpy
 import logging
-from acoustic_base import AcousticBase
+from frontend.acoustic_base import AcousticBase
 import os
 #io_funcs.
 
