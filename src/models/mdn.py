@@ -170,7 +170,7 @@ class MixtureDensityNetwork(object):
 
             all_mix_prob = []
             
-            print   n_component
+            print(n_component)
             for i in xrange(n_component):  #n_component
                 sigma = self.final_layer.sigma[:, i*n_outs:(i+1)*n_outs]
                 mu    = self.final_layer.mu[:, i*n_outs:(i+1)*n_outs]
