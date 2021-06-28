@@ -3,7 +3,7 @@ import os
 import numpy, re, sys
 from multiprocessing import Pool
 from io_funcs.binary_io import BinaryIOCollection
-from linguistic_base import LinguisticBase
+from frontend.linguistic_base import LinguisticBase
 
 import lxml
 from lxml import etree
