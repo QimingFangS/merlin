@@ -52,7 +52,7 @@ from io_funcs.binary_io import BinaryIOCollection
 from logplot.logging_plotting import LoggerPlotter, MultipleSeriesPlot, SingleWeightMatrixPlot
 import logging  # as logging
 import logging.config
-import StringIO
+from io import StringIO
 
 
 def extract_file_id_list(file_list):
