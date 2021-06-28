@@ -311,11 +311,11 @@ if __name__ == '__main__':
     label_composer = LabelComposer()
     label_composer.load_label_configuration('configuration/labelconfigfile.conf')
     
-    print 'Loaded configuration, which is:'
-    print label_composer.configuration.labels
+    print('Loaded configuration, which is:')
+    print(label_composer.configuration.labels)
 
     d=label_composer.compute_label_dimension()
-    print "label dimension will be",d
+    print("label dimension will be",d)
     
     # not written test code for actual label processing - too complex and relies on config files
     
