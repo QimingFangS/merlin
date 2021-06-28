@@ -845,7 +845,7 @@ class configuration(object):
             # inject the config lines for the file handler, now that we know the name of the file it will write to
 
             if not os.path.exists(self.log_path):
-                os.makedirs(self.log_path, 0755)
+                os.makedirs(self.log_path, "0755")
             log_file_name = '%s_%s_%d_%d_%d_%d_%f_%s.log' %(self.combined_model_name, self.combined_feature_name, self.train_file_number,
                                                                       self.cmp_dim, len(self.hidden_layer_size),
                                                                       self.hidden_layer_size[-1], self.learning_rate,
