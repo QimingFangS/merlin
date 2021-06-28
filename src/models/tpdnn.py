@@ -297,7 +297,7 @@ class TokenProjectionDNN(object):
         
 
         if self.use_rprop:
-            print '========USING RPROP ========='
+            print('========USING RPROP =========')
             updates = compile_RPROP_train_function(self, gparams)
             subword_updates = compile_RPROP_train_function(self, gparams, params_to_update=subword_params)
             word_updates = compile_RPROP_train_function(self, gparams, params_to_update=word_params)
@@ -305,7 +305,7 @@ class TokenProjectionDNN(object):
             on_unused_input_value = 'warn'
              
         else:    
-            print '========NOT USING RPROP ========='            
+            print('========NOT USING RPROP =========')            
             updates = make_updates_plain(self.params, self.delta_params, gparams, lr_list, all_params)
             subword_updates = make_updates_plain(self.params, self.delta_params, gparams, lr_list, subword_params)
             word_updates = make_updates_plain(self.params, self.delta_params, gparams, lr_list, word_params)
@@ -359,7 +359,7 @@ class TokenProjectionDNN(object):
 
 
         ## Update all params -- maybe never used:
-        print 'compile train_all_fn'
+        print('compile train_all_fn')
         train_all_fn = theano.function(inputs=[index, theano.Param(learning_rate, default = 0.0001),
               theano.Param(momentum, default = 0.5)],
               outputs=self.errors,
@@ -373,7 +373,7 @@ class TokenProjectionDNN(object):
                                           (index + 1) * batch_size]})
                      
         ## Update all but word-projection part of split first hidden layer and projection weights  
-        print 'compile train_subword_fn'                        
+        print('compile train_subword_fn')                        
         train_subword_fn = theano.function(inputs=[index, theano.Param(learning_rate, default = 0.0001),
               theano.Param(momentum, default = 0.5)],
               outputs=self.errors,
@@ -386,7 +386,7 @@ class TokenProjectionDNN(object):
                       self.y: train_set_y[index * batch_size:
                                           (index + 1) * batch_size]})
 
-        print 'compile train_word_fn' 
+        print('compile train_word_fn') 
         train_word_fn = theano.function(inputs=[index, theano.Param(learning_rate, default = 0.0001),
               theano.Param(momentum, default = 0.5)],
               outputs=self.errors,
@@ -399,7 +399,7 @@ class TokenProjectionDNN(object):
                       self.y: train_set_y[index * batch_size:
                                           (index + 1) * batch_size]})                                          
 
-        print 'compile infer_projections_fn -- NB: to operate by default on validation set' 
+        print('compile infer_projections_fn -- NB: to operate by default on validation set') 
         infer_projections_fn = theano.function(inputs=[index, theano.Param(learning_rate, default = 0.0001),
               theano.Param(momentum, default = 0.5)],
               outputs=self.errors,
@@ -432,7 +432,7 @@ class TokenProjectionDNN(object):
         def valid_score():
             return [valid_score_i(i) for i in xrange(n_valid_batches)]
 
-        print 'finished Theano function compilation'  
+        print('finished Theano function compilation')
         return train_all_fn, train_subword_fn,  train_word_fn, infer_projections_fn, valid_fn, valid_score_i
 
     def parameter_prediction(self, test_set_x, test_set_x_proj):  #, batch_size
