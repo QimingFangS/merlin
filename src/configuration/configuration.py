@@ -868,7 +868,7 @@ class configuration(object):
 
             try:
                 # pass that string as a filehandle
-                fh = io.BytesIO(config_string.encode())
+                fh = io.BytesIO(config_string.encode('utf-8'))
                 logging.config.fileConfig(fh)
                 fh.close()
                 logger.info("logging is now fully configured")
