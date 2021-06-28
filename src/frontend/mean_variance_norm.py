@@ -42,7 +42,7 @@ from io_funcs.binary_io import BinaryIOCollection
 import  logging
 import  numpy
 
-from feature_normalisation_base import FeatureNormBase
+from frontend.feature_normalisation_base import FeatureNormBase
 
 class   MeanVarianceNorm(FeatureNormBase):
     '''
