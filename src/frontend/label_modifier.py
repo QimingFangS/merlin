@@ -49,7 +49,7 @@ class HTSLabelModification(object):
         '''
         utt_number = len(gen_dur_list)
         if utt_number != len(in_gen_label_align_file_list):
-            print   "the number of input and output files should be the same!\n";
+            print("the number of input and output files should be the same!\n";)
             sys.exit(1)
                
         for i in xrange(utt_number):
