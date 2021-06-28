@@ -38,7 +38,8 @@
 ################################################################################
 
 
-import numpy, time, cPickle, gzip, sys, os, copy
+import numpy, time, gzip, sys, os, copy
+import pickle as cPickle
 
 import theano
 import theano.tensor as T
