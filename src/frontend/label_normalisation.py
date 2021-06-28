@@ -125,7 +125,7 @@ class HTSLabelNormalisation(LabelNormalisation):
         logger = logging.getLogger("dur")
         utt_number = len(ori_file_list)
         if utt_number != len(output_file_list):
-            print   "the number of input and output files should be the same!\n";
+            print("the number of input and output files should be the same!\n";)
             sys.exit(1)
                
         ### set default feature type to numerical, if not assigned ###
