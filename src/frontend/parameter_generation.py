@@ -47,10 +47,10 @@ import os, re, numpy
 import logging
 
 if FAST_MLPG:
-    from mlpg_fast import MLParameterGenerationFast as MLParameterGeneration
+    from frontend.mlpg_fast import MLParameterGenerationFast as MLParameterGeneration
 #    pass
 else:
-    from mlpg import MLParameterGeneration
+    from frontend.mlpg import MLParameterGeneration
 
 class   ParameterGeneration(object):
 
