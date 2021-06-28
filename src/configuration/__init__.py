@@ -40,4 +40,4 @@
 import configuration.configuration
 
 # instantiate one object of this class
-cfg = configuration.configuration()
+cfg = configuration()
