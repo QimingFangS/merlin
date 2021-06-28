@@ -1,5 +1,5 @@
 
-import cPickle
+import pickle as cPickle
 import gzip
 import os
 import sys
