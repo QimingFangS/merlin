@@ -37,7 +37,7 @@ from frontend.merge_features import MergeFeat
 #from frontend.mlpg_fast_layer import MLParameterGenerationFastLayer
 
 
-import configuration
+from configuration.configuration import configuration
 from models.deep_rnn import DeepRecurrentNetwork
 
 from utils.compute_distortion import DistortionComputation, IndividualDistortionComp
