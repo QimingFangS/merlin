@@ -115,17 +115,17 @@ def visualize_dnn(dnn):
     ## plot activation weights including input and output
     layer_num = len(W)		
     for i_layer in xrange(layer_num):
-		fig_name = 'Activation weights W' + str(i_layer) + '_' + layer_name[i_layer]
-		fig_title = 'Activation weights of W' + str(i_layer)
-		xlabel = 'Neuron index of hidden layer ' + str(i_layer)
-		ylabel = 'Neuron index of hidden layer ' + str(i_layer+1)
-		if i_layer == 0:
-			xlabel = 'Input feature index'
-		if i_layer == layer_num-1:
-			ylabel = 'Output feature index'
-		logger.create_plot(fig_name, SingleWeightMatrixPlot)
-		plotlogger.add_plot_point(fig_name, fig_name, W[i_layer])
-		plotlogger.save_plot(fig_name, title=fig_name, xlabel=xlabel, ylabel=ylabel)
+	fig_name = 'Activation weights W' + str(i_layer) + '_' + layer_name[i_layer]
+	fig_title = 'Activation weights of W' + str(i_layer)
+	xlabel = 'Neuron index of hidden layer ' + str(i_layer)
+	ylabel = 'Neuron index of hidden layer ' + str(i_layer+1)
+	if i_layer == 0:
+		xlabel = 'Input feature index'
+	if i_layer == layer_num-1:
+		ylabel = 'Output feature index'
+	logger.create_plot(fig_name, SingleWeightMatrixPlot)
+	plotlogger.add_plot_point(fig_name, fig_name, W[i_layer])
+	plotlogger.save_plot(fig_name, title=fig_name, xlabel=xlabel, ylabel=ylabel)
 
 
 def load_covariance(var_file_dict, out_dimension_dict): 
