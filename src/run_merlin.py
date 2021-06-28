@@ -107,7 +107,7 @@ def visualize_dnn(dnn):
     W = list(); layer_name = list()
     for i in xrange(len(dnn.params)):
         aa = dnn.params[i].get_value(borrow=True).T
-        print   aa.shape, aa.size
+        print(aa.shape, aa.size)
         if aa.size > aa.shape[0]:
         	W.append(aa)
         	layer_name.append(dnn.params[i].name)
@@ -254,7 +254,7 @@ def train_DNN(train_xy_file_list, valid_xy_file_list, \
 #    finetune_lr = 0.000125
     previous_finetune_lr = finetune_lr
     
-    print   finetune_lr
+    print(finetune_lr)
     
     while (epoch < training_epochs):
         epoch = epoch + 1
