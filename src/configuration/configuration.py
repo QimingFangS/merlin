@@ -868,7 +868,7 @@ class configuration(object):
 
             try:
                 # pass that string as a filehandle
-                fh = six.StringIO(config_string)
+                fh = io.BytesIO(config_string.encode())
                 logging.config.fileConfig(fh)
                 fh.close()
                 logger.info("logging is now fully configured")
