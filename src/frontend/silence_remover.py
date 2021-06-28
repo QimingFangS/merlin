@@ -258,7 +258,7 @@ def trim_silence(in_list, out_list, in_dimension, label_list, label_dimension, \
             assert (numpy.unique(silence_flag) == numpy.array([0]).all()) or \
                    (numpy.unique(silence_flag) == numpy.array([1]).all()), \
                    'dimension %s of %s contains values other than 0 and 1'%(silence_feature_index, infile)
-        print 'Remove %d%% of frames (%s frames) as silence... '%(100 * numpy.sum(silence_flag / float(len(silence_flag))), int(numpy.sum(silence_flag)))
+        print('Remove %d%% of frames (%s frames) as silence... '%(100 * numpy.sum(silence_flag / float(len(silence_flag))), int(numpy.sum(silence_flag))))
         non_silence_indices = numpy.nonzero(silence_flag == 0)  ## get the indices where silence_flag == 0 is True (i.e. != 0)
         if percent_to_keep != 0:
             assert type(percent_to_keep) == int and percent_to_keep > 0
