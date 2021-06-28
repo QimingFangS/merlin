@@ -323,7 +323,7 @@ if __name__ == '__main__':
 
 
 
-    print "testing the logging code"
+    print("testing the logging code")
     logger.debug('A DEBUG message')
     logger.info('A INFO message')
     logger.warning('A WARN message')
@@ -342,7 +342,7 @@ if __name__ == '__main__':
     # logger.addHandler(ph)
     
 
-    print "testing the plotting code"
+    print("testing the plotting code")
     
     # the first argument is just a key for referring to this plot within the code
     # the second argument says what kind of plot we will be making
