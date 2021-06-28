@@ -39,7 +39,7 @@
 
 
 import math
-import configparser
+import configparser as ConfigParser
 import os
 import logging
 from io import StringIO
