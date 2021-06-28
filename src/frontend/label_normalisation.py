@@ -1336,7 +1336,7 @@ if __name__ == '__main__':
     
     qs_file_name = '/afs/inf.ed.ac.uk/group/cstr/projects/blizzard_entries/blizzard2016/straight_voice/Hybrid_duration_experiments/dnn_tts_release/lstm_rnn/data/questions.hed'
     
-    print   qs_file_name
+    print(qs_file_name)
     
     ori_file_list = ['/afs/inf.ed.ac.uk/group/cstr/projects/blizzard_entries/blizzard2016/straight_voice/Hybrid_duration_experiments/dnn_tts_release/lstm_rnn/data/label_state_align/AMidsummerNightsDream_000_000.lab']
     output_file_list = ['/afs/inf.ed.ac.uk/group/cstr/projects/blizzard_entries/blizzard2016/straight_voice/Hybrid_duration_experiments/dnn_tts_release/lstm_rnn/data/binary_label_601/AMidsummerNightsDream_000_000.lab']
@@ -1349,5 +1349,5 @@ if __name__ == '__main__':
     #feat_size = "phoneme"
     #label_operater.prepare_dur_data(ori_file_list, output_file_list, feature_type, unit_size, feat_size)
     #label_operater.prepare_dur_data(ori_file_list, output_file_list, feature_type)
-    print   label_operater.dimension
+    print(label_operater.dimension)
 
