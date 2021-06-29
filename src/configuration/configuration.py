@@ -841,11 +841,11 @@ class configuration(object):
 
             # config file format doesn't allow leading white space on lines, so remove it with dedent
             config_string = config_string + textwrap.dedent(to_inject)
-            print(config_string)
+            
             try:
                 # pass that string as a filehandle
                 fh = io.StringIO(config_string)
-                print('-----DEBUG-----', fh.getvalue())
+                print('-----DEBUG-----', config_string)
                 logging.config.fileConfig(fh)
                 fh.close()
                 logger.info("logging is now fully configured")
