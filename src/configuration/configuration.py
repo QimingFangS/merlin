@@ -847,7 +847,7 @@ class configuration(object):
                 #fh = io.StringIO("/home/csuser/deepvoice3_pytorch/vctk_preprocess/latest_features/merlin/egs/build_your_own_voice/s1/conf/logging_config.conf")
                 #print('-----DEBUG-----', config_string)
                 #fh = logging.FileHandler('/home/csuser/deepvoice3_pytorch/vctk_preprocess/latest_features/merlin/egs/build_your_own_voice/s1/conf/logging_config.conf')
-                logging.config.fileConfig('/home/csuser/deepvoice3_pytorch/vctk_preprocess/latest_features/merlin/egs/build_your_own_voice/s1/conf/logging_config.conf', disable_existing_loggers = FALSE)
+                logging.config.fileConfig('/home/csuser/deepvoice3_pytorch/vctk_preprocess/latest_features/merlin/egs/build_your_own_voice/s1/conf/logging_config.conf', disable_existing_loggers = False)
                 fh.close()
                 logger.info("logging is now fully configured")
 
