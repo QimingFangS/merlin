@@ -844,7 +844,7 @@ class configuration(object):
             
             try:
                 # pass that string as a filehandle
-                fh = io.StringIO(config_string)
+                fh = io.StringIO(self.log_config_file)
                 #print('-----DEBUG-----', config_string)
                 logging.config.fileConfig(fh)
                 fh.close()
