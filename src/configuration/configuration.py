@@ -844,11 +844,11 @@ class configuration(object):
             
             try:
                 # pass that string as a filehandle
-                fh = io.StringIO(fname = 'logging_config.conf')
+                #fh = io.StringIO()
                 #print('-----DEBUG-----', config_string)
                 #fh = logging.FileHandler('/home/csuser/deepvoice3_pytorch/vctk_preprocess/latest_features/merlin/egs/build_your_own_voice/s1/conf/logging_config.conf')
                 #fh = io.StringIO(config_string)
-                logging.config.fileConfig(fh)
+                logging.config.fileConfig(fname = 'logging_config.conf')
                 fh.close()
                 logger.info("logging is now fully configured")
 
