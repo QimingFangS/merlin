@@ -845,7 +845,7 @@ class configuration(object):
             try:
                 # pass that string as a filehandle
                 fh = io.StringIO(config_string)
-                #print('-----DEBUG-----', config_string)
+                print('-----DEBUG-----', fh.getvalue())
                 #fh = logging.FileHandler('/home/csuser/deepvoice3_pytorch/vctk_preprocess/latest_features/merlin/egs/build_your_own_voice/s1/conf/logging_config.conf')
                 #fh = io.StringIO(config_string)
                 logging.config.fileConfig(fh)
