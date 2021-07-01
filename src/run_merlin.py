@@ -1182,18 +1182,16 @@ if __name__ == '__main__':
         logger.info('  Git is available in the working directory:')
         git_describe = subprocess.Popen(['git', 'describe', '--tags', '--always'],
                                         stdout=subprocess.PIPE).communicate()[0][:-1]
-        git_describe = git_describe.decode('UTF-8')
-        print('-----DEBUG-----', git_describe)
-        logger.info('    Merlin version: ' + git_describe)
+        logger.info('    Merlin version: ' + git_describe.decode('UTF-8'))
         git_branch = subprocess.Popen(['git', 'rev-parse', '--abbrev-ref', 'HEAD'],
                                       stdout=subprocess.PIPE).communicate()[0][:-1]
-        logger.info('    branch: ' + git_branch)
+        logger.info('    branch: ' + git_branch.decode('UTF-8'))
         git_diff = subprocess.Popen(['git', 'diff', '--name-status'], stdout=subprocess.PIPE).communicate()[0]
         git_diff = git_diff.replace('\t', ' ').split('\n')
         logger.info('    diff to Merlin version:')
         for filediff in git_diff:
             if len(filediff) > 0:
-                logger.info('      ' + filediff)
+                logger.info('      ' + filediff.decode('UTF-8'))
         logger.info('      (all diffs logged in ' + os.path.basename(cfg.log_file) + '.gitdiff' + ')')
         os.system('git diff > ' + cfg.log_file + '.gitdiff')
 
