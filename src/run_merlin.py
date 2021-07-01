@@ -1182,6 +1182,7 @@ if __name__ == '__main__':
         logger.info('  Git is available in the working directory:')
         git_describe = subprocess.Popen(['git', 'describe', '--tags', '--always'],
                                         stdout=subprocess.PIPE).communicate()[0][:-1]
+        print('-----DEBUG-----', git_describe)
         logger.info('    Merlin version: ' + git_describe)
         git_branch = subprocess.Popen(['git', 'rev-parse', '--abbrev-ref', 'HEAD'],
                                       stdout=subprocess.PIPE).communicate()[0][:-1]
