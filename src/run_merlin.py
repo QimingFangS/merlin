@@ -1187,11 +1187,11 @@ if __name__ == '__main__':
                                       stdout=subprocess.PIPE).communicate()[0][:-1]
         logger.info('    branch: ' + git_branch.decode('UTF-8'))
         git_diff = subprocess.Popen(['git', 'diff', '--name-status'], stdout=subprocess.PIPE).communicate()[0]
-        git_diff = git_diff.replace('\t', ' ').split('\n')
+        git_diff = git_diff.decode('UTF-8').replace('\t', ' ').split('\n')
         logger.info('    diff to Merlin version:')
         for filediff in git_diff:
             if len(filediff) > 0:
-                logger.info('      ' + filediff.decode('UTF-8'))
+                logger.info('      ' + filediff)
         logger.info('      (all diffs logged in ' + os.path.basename(cfg.log_file) + '.gitdiff' + ')')
         os.system('git diff > ' + cfg.log_file + '.gitdiff')
 
